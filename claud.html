@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مساعد الذكاء الاصطناعي المطور</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- ✨ مكتبة Highlight.js وملف CSS للتمييز (اختر النمط الذي تفضله) ✨ -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <!-- يمكنك تغيير atom-one-dark.min.css إلى نمط آخر من: https://highlightjs.org/static/demo/ -->
+
+    <script src="https://js.puter.com/v2/"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- يمكنك اختيار تحميل لغات معينة فقط لتقليل الحجم -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/javascript.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script> -->
+
+</head>
+<body>
+    <div id="app-container">
+        <!-- 🔹 الشريط الجانبي (History) -->
+        <div id="sidebar">
+            <div class="sidebar-header">
+                <h3>📜 المحادثات السابقة</h3>
+                <button id="clearAllHistoryBtn" title="مسح كل السجل">🗑️ مسح الكل</button>
+            </div>
+            <button id="newChatBtn" class="new-chat-button">➕ محادثة جديدة</button>
+            <ul id="historyList">
+                <!-- سيتم ملء المحادثات هنا بواسطة JavaScript -->
+            </ul>
+        </div>
+
+        <!-- 🔹 منطقة الدردشة -->
+        <div id="chat-area">
+            <div class="chat-header">
+                <h2>🤖 مساعد الذكاء الاصطناعي</h2>
+                <div class="model-selector-container">
+                    <label for="modelSelector">اختر النموذج:</label>
+                    <select id="modelSelector">
+                        <!-- سيتم ملء النماذج هنا بواسطة JavaScript -->
+                    </select>
+                </div>
+                <button id="clearCurrentChatBtn" title="مسح الدردشة الحالية">🧹 مسح الدردشة</button>
+            </div>
+
+            <div id="chat-messages">
+                <!-- سيتم عرض الرسائل هنا -->
+            </div>
+
+            <div id="loadingIndicator" style="display: none;">
+                <div class="spinner"></div>
+                <p>جارٍ التفكير...</p>
+            </div>
+
+            <div id="input-area">
+                <textarea id="userInput" placeholder="اكتب سؤالك هنا... (اضغط Shift+Enter لسطر جديد)" rows="1"></textarea>
+                <div class="input-controls">
+                    <label for="fileInput" class="file-input-label" title="إرفاق ملف">📎</label>
+                    <input type="file" id="fileInput" accept="image/*,text/plain,.pdf,.doc,.docx">
+                    <span id="fileName" class="file-name-display"></span>
+                    <button id="sendButton" title="إرسال">📤 إرسال</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
